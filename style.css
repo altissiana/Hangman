@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    color:white;
+    font-size:20px; 
+}
+
+#container {
+    margin-left:50px;  
+}
+
+.field {
+    background-color: black;
+    color: yellow;
+    height:50px;
+    width:50px;
+    font-size: 20px;
+    text-align: center;  
+    margin:10px;
+}
+
+#butt {
+    background-color: black;
+    color: yellow;
+    height:50px;
+    width:80px;
+    font-size: 30px;
+}
+
+#image {
+    display:flex;
+    justify-content: flex-end;
+    margin-top:-280px;
+    margin-right:250px;
+}
+
+#answer { color:yellow;}
+#counter {color:yellow;}
+#stat {color:yellow;}
