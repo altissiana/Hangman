@@ -13,9 +13,9 @@ var commonWordsArr = [
     "who", "oil", "its", "now", "find", "long", "down", "day", "did", "get",
     "come", "made", "may", "part"
 ];
-
-var commonWords = commonWordsArr[Math.floor(Math.random() * commonWordsArr.length)];
-
+var guessable = commonWordsArr.filter(word => word.length >= 3)
+var commonWord = guessable[Math.floor(Math.random() * guessable.length)];
+console.log(commonWord)
 var s;
 var count = 0;
 var answerArray = [];
@@ -23,7 +23,7 @@ var answerArray = [];
 document.getElementById('butt').addEventListener('click', letter)
 
 function startUp() {
-    for (var i = 0; i < commonWords.length; i++) {
+    for (var i = 0; i < commonWord.length; i++) {
         answerArray[i] = "_";
     }
     s = answerArray.join(" ");
@@ -34,8 +34,8 @@ function letter() {
     var letter = document.getElementById("letter").value;
 
     if (letter.length > 0) {
-        for (var i = 0; i < commonWords.length; i++) {
-            if (commonWords[i] === letter) {
+        for (var i = 0; i < commonWord.length; i++) {
+            if (commonWord[i] === letter) {
                 answerArray[i] = letter;
             }
         }
@@ -46,14 +46,19 @@ function letter() {
     if (count == 5) {
         document.getElementById("stat").innerHTML = "You can do it!";
     }
-    if (count == 6) {
+    if (count == 8) {
         document.getElementById("stat").innerHTML = "Game Over!";
         gameOver()
     }
 }
 
+
 function gameOver() {
     document.getElementById('butt').removeEventListener('click', letter)
 }
 
+function gameOver() {
+    alert("Try Again!");
+    window.location.reload();
+}
 
