@@ -50,8 +50,9 @@ function letter() {
         document.getElementById("stat").innerHTML = "Game Over!";
         gameOver()
     }
+    if (answerArray.indexOf('_') == -1)
+        alert('You win!')
 }
-
 
 function gameOver() {
     document.getElementById('butt').removeEventListener('click', letter)
@@ -61,4 +62,5 @@ function gameOver() {
     alert("Try Again!");
     window.location.reload();
 }
+
 
